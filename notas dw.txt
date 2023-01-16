@@ -30,4 +30,5 @@ Num terminal aberto na diretoria da pasta do projeto git, depois de dar pull:
 npm run dev
 
 Nota para mariana
- cd /Users/mariana/Documents/testedw
+
+ cd /Users/mariana/Documents/projetoDWFinal 
