@@ -2,23 +2,21 @@ npx create-next-app@latest
 Alterar para -p 3001 no package.json no projeto (se necessário)
 https://<wp-url>/wp-json/wp/v2/<post-slug>
 
-npm install
 npm run build
+npm run dev
+
+npm install
 npm start
- 
-user
-ZZkGcTN8Tbig
 
 cat $HOME/bitnami_application_password
-
 
 IMPORTANTE -----//-----//-----
 
 Repositório GitHub:
-https://github.com/thomaspfresco/testedw
+https://github.com/thomaspfresco/projetoDW
 
 Link deploy:
-https://testedw-final.vercel.app/
+https://projeto-dw-eight.vercel.app/
 
 Backoffice wordpress:
 https://pontoconto-c3fdff.ingress-bonde.ewp.live/wp-login.php
@@ -27,7 +25,7 @@ thomaspfresco
 JQGuQLou0M3B65IhmEd2BTrP
 
 Num terminal aberto na diretoria da pasta do projeto git, depois de dar pull:
-npm run dev
+npm start
 
 Nota para mariana
  cd /Users/mariana/Documents/testedw
