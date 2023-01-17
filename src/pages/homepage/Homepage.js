@@ -18,6 +18,8 @@ const novelo_blue = require('../../images/novelo-blue.gif');
 const logos = { logo_red, logo_yellow, logo_blue };
 const novelos = { novelo_red, novelo_yellow, novelo_blue}
 
+let color = 0;
+
 /*function reload() {
 	window.location.reload(false);
 }*/
@@ -51,6 +53,7 @@ function changeToRed() {
 	
 	setLogo(logos.logo_red);
 	setNovelo(novelos.novelo_red);
+	color = 0;
 	}
 	
 	function changeToYellow() {
@@ -60,6 +63,7 @@ function changeToRed() {
 	
 		setLogo(logos.logo_yellow);
 		setNovelo(novelos.novelo_yellow);
+		color = 1;
 	}
 	
 	function changeToBlue() {
@@ -69,6 +73,7 @@ function changeToRed() {
 		
 		setLogo(logos.logo_blue);
 		setNovelo(novelos.novelo_blue);
+		color = 2;
 	}
 
 	const fetchProjects = async () => {
@@ -76,12 +81,11 @@ function changeToRed() {
 		await fetch(API_URL + `conto`)
 			.then(response => response.json())
 			.then(result => {
+				//console.log(result[4].content.rendered.split('<hr class="wp-block-separator has-alpha-channel-opacity"/>')[0].split('<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>')[0].split('"')[11]);
 				setProjects(result)
 				setLoading(false)
 			});
 	}
-
-	//console.log(projects);
 
 	const fetchCategories = async () => {
 
@@ -100,7 +104,7 @@ function changeToRed() {
 				let pesquisa = document.getElementById('search').value;
 				let resultFinal = [];
 				for (const proj of result) {
-					if (proj.slug.toUpperCase().includes(pesquisa.toUpperCase())) {
+					if (proj.title.rendered.toUpperCase().includes(pesquisa.toUpperCase())) {
 					resultFinal.push(proj);
 				}
 			}
@@ -145,10 +149,11 @@ function changeToRed() {
 		<div className='circle' id='circleYellow' onClick={changeToYellow}></div>
 		<div className='circle' id='circleBlue' onClick={changeToBlue}></div>
   		<p id="info">.Conto propõe uma forma alternativa de contar histórias para crianças. É uma coleção de reintrepretações de contos clássicos, do texto às ilustrações, com uma forte componente didática e interativa. Surge em contexto académico, na cadeira de Desenvolvimento Web do Mestrado em Design e Multimédia na Universidade de Coimbra. 
-			Resulta do trabalho de <a className="linksPessoais" href="https://www.instagram.com/__inesazevedo__/" target="_blank" rel="noopener noreferrer">Inês Azevedo</a>, <a className="linksPessoais" href="https://www.instagram.com/mariana_pombo7/" target="_blank" rel="noopener noreferrer">Mariana Pombo</a> e <a className="linksPessoais" href="https://www.instagram.com/thomaspfresco/" target="_blank" rel="noopener noreferrer">Thomas Fresco</a>.</p>
+			Resulta do trabalho de <a className="linksPessoais" href="https://www.linkedin.com/in/inesazevedo-ia/" target="_blank" rel="noopener noreferrer">Inês Azevedo</a>, <a className="linksPessoais" href="https://www.linkedin.com/in/mariana-pombo-58694a234/" target="_blank" rel="noopener noreferrer">Mariana Pombo</a> e <a className="linksPessoais" href="https://www.instagram.com/thomaspfresco/" target="_blank" rel="noopener noreferrer">Thomas Fresco</a>.</p>
 		</section>
 		</>
 	)
 }
 
+export {color};
 export default Homepage

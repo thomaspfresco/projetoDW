@@ -16,7 +16,7 @@ a {
 
 /*html,body{
 	overflow: hidden !important; 
-}*/
+} jdkdsjf*/
 .filter-button {
   margin: 10px;
 }
@@ -32,6 +32,10 @@ a {
 .storyBlock {
   display: inline-block;
   max-width: 500px;
+}
+
+.storyBlock:hover {
+  cursor: pointer;
 }
 
 html, body, section {
@@ -243,4 +247,51 @@ body::-webkit-scrollbar {
 #circleBlue {
   transform: translate(10vh, 0);
   background-color: #277BC1;
+}
+
+#storyNav {
+  z-index: 1000;
+  position: fixed;
+  height: 10vh;
+  width: 100vw;
+  padding-left: 4vh;
+  padding-top: 3vh;
+  background-color: #FFF7EA;
+}
+
+#goBack {
+  position: absolute;
+  height: 5vh;
+}
+
+#goBack:hover {
+  cursor: pointer;
+}
+
+#storyTitle {
+  position: absolute;
+  font-size: 3vh;
+  padding-left: 7vh;
+  color: black;
+}
+
+.sectionImage {
+  width: 70vh;
+  display: block;
+}
+
+.sectionText {
+  display: block;
+}
+
+#goBackText {
+  position: absolute;
+  bottom: 7vh;
+  font-size: 2vh;
+  color: black;
+}
+
+#goBackText:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }/*# sourceMappingURL=App.css.map */
