@@ -18,7 +18,7 @@ const novelo_blue = require('../../images/novelo-blue.gif');
 const logos = { logo_red, logo_yellow, logo_blue };
 const novelos = { novelo_red, novelo_yellow, novelo_blue}
 
-let color = 0;
+var color = 0;
 
 /*function reload() {
 	window.location.reload(false);
